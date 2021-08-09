@@ -1,0 +1,29 @@
+img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.txtInput {
+    width: 200px;
+    border-radius: 0%;
+    margin-left: 50px;
+}
+
+.txtInput {
+    border-radius: 2em;
+    border: none;
+    padding: 0.8em;
+    padding-left: 1.5em;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+
+  .fontSize{
+  font-size:48px;
+  }
