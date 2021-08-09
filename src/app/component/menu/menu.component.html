@@ -1,18 +1,25 @@
 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-    <mat-icon>more_vert</mat-icon>
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="mapOpen()">
+    <mat-icon>map</mat-icon>
+    <span>map</span>
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="weather()">
-      <mat-icon>beach_access</mat-icon>
-      <span>Weather Info</span>
-    </button>
-    <button mat-menu-item (click)="webcamOpen()">
-      <mat-icon>camera</mat-icon>
-      <span>Webcam</span>
-    </button>
-    <button mat-menu-item (click)="contactUs()">
-      <mat-icon>redeem</mat-icon>
-      <span>Contact Us</span>
-    </button>
-  </mat-menu>
-  
+  <button mat-menu-item (click)="weather()">
+    <mat-icon>beach_access</mat-icon>
+    <span>Weather Info</span>
+  </button>
+  <button mat-menu-item (click)="webcamOpen()">
+    <mat-icon>camera</mat-icon>
+    <span>Webcam</span>
+  </button>
+  <button mat-menu-item (click)="userResume()">
+    <mat-icon>description</mat-icon>
+    <span>Resume</span>
+  </button>
+  <button mat-menu-item (click)="contactUs()">
+    <mat-icon>redeem</mat-icon>
+    <span>Contact Us</span>
+  </button>
+</mat-menu>

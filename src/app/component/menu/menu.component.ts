@@ -14,15 +14,23 @@ export class MenuComponent implements OnInit {
   }
 
   public contactUs() {
-    this.router.navigateByUrl('/contact', { skipLocationChange: true });
+    this.router.navigate(['/contact']);
   }
 
   public weather() {
-    this.router.navigateByUrl('/weather', { skipLocationChange: true });
+    this.router.navigate(['/weather']);
   }
 
   public webcamOpen(){
-    this.router.navigateByUrl('/webcam');
+    this.router.navigate(['/webcam']);
+  }
+
+  public mapOpen(){
+    this.router.navigate(['/maps']);
+  }
+
+  public userResume(){
+    this.router.navigate(['/userResume']);
   }
 
 }

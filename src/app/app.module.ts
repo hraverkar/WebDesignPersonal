@@ -13,6 +13,13 @@ import { ContactComponent } from './component/contact/contact.component';
 import { WeatherComponent } from './component/weather/weather.component';
 import { WebcamModule } from 'ngx-webcam';
 import { WebcamComponent } from './component/webcam/webcam.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { AngularCesiumModule, PolygonsEditorService } from 'angular-cesium';
+import { AngularCesiumWidgetsModule } from 'angular-cesium';
+import { MapComponent } from './component/map/map.component';
+import { ResumeComponent } from './component/resume/resume.component';
+
 
 @NgModule({
   declarations: [
@@ -23,16 +30,21 @@ import { WebcamComponent } from './component/webcam/webcam.component';
     MenuComponent,
     ContactComponent,
     WeatherComponent,
-    WebcamComponent
+    WebcamComponent,
+    MapComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    WebcamModule
+    WebcamModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularCesiumModule.forRoot(),
+    AngularCesiumWidgetsModule
   ],
-  providers: [],
+  providers: [PolygonsEditorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

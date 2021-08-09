@@ -1,30 +1,38 @@
 import { IWeatherDataInfo } from './../../interface/weatherDataInfo';
 import { WeatherService } from './../../service/weather.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import * as moment from 'moment';
 import 'moment-timezone';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss']
 })
-export class WeatherComponent implements OnInit {
+export class WeatherComponent implements OnInit, OnDestroy {
 
-  constructor(private weatherService: WeatherService, private _snackBar: MatSnackBar) { }
+  public constructor(private weatherService: WeatherService, private _snackBar: MatSnackBar) { }
   public cityName: string;
   public weatherInfo: any;
-  value: string;
-  weatherData: IWeatherDataInfo;
-  currDiv = 'A';
-  iconurl: any;
-  ngOnInit(): void {
+  public  value: string;
+  public weatherData: IWeatherDataInfo;
+  public currDiv = 'A';
+  public iconurl: any;
+  public weatherSubs = new Subscription();
+  public ngOnInit(): void {
   }
+
+  public ngOnDestroy() {
+    if (this.weatherSubs)
+      this.weatherSubs.unsubscribe();
+  }
+
 
   public getWeather(divVal: string) {
     if (this.value.length > 0) {
-      this.weatherService.getLocationData(this.value).subscribe((res) => {
+      this.weatherSubs = this.weatherService.getLocationData(this.value).subscribe((res) => {
         this.weatherData = res.body;
         this.changeTempratureData(this.weatherData);
         this.currDiv = divVal;
