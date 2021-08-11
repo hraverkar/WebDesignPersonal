@@ -1,7 +1,14 @@
-img {
+.image {
     width: 55px;
     height: 55px;
     border-radius: 50%;
+}
+
+.card-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid rgb(110, 108, 108);
 }
 
 .txtInput {
@@ -24,6 +31,25 @@ img {
   }
   
 
-  .fontSize{
-  font-size:48px;
+.fontSize {
+    font-size:48px;
   }
+
+.matdesign {
+    padding-left: 40%;
+    margin-top: 1%;
+  }
+
+::ng-deep .mat-card {
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 12px -20px !important;
+}
+
+::ng-deep .mat-card-header .mat-card-title {
+    font-size: 40px;
+}

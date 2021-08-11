@@ -19,6 +19,7 @@ import { AngularCesiumModule, PolygonsEditorService } from 'angular-cesium';
 import { AngularCesiumWidgetsModule } from 'angular-cesium';
 import { MapComponent } from './component/map/map.component';
 import { ResumeComponent } from './component/resume/resume.component';
+import { FlexModule  } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ResumeComponent } from './component/resume/resume.component';
     WebcamModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularCesiumModule.forRoot(),
-    AngularCesiumWidgetsModule
+    AngularCesiumWidgetsModule,
+    FlexModule 
   ],
   providers: [PolygonsEditorService],
   bootstrap: [AppComponent]

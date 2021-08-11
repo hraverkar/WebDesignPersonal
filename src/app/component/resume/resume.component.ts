@@ -27,6 +27,7 @@ export class ResumeComponent implements OnInit {
   public onGithubClick(){
     location.href="https://github.com/hraverkar";
   }
+  
   public sendEmail(){
     location.href="mailto:harshal.raverkar@gmail.com";
   }
